@@ -7,7 +7,7 @@ with open('products.txt', 'w') as file:
     file.write("Виноград: 70\n")
 
 # Функция для поиска цены товара
-def find_price(x):
+def F_P(x):
     with open('products.txt', 'r') as file:
         for l in file:
             name, price = l.strip().split(': ')
@@ -22,7 +22,7 @@ while True:
     print(f"Цена на {x}: {find_price(x)}")
 
 # Функция для добавления новых товаров с клавиатуры
-def add_products():
+def ADD_P():
     NP = []
     while True:
         PN = input("Введите название товара, который хотите добавить (или 'next' для завершения): ")
@@ -35,7 +35,7 @@ def add_products():
         for product in NP:
             file.write(f"{product}\n")
             
-add_products()
+ADD_P()
 
 # Функция для удаления товара
 def RP(x):
@@ -57,7 +57,7 @@ while True:
 
 
 # Функция для создания нового файла с упорядоченными товарами
-def create_sorted_file():
+def C_S_F():
     with open('products.txt', 'r') as file:
         lines = file.readlines() #читает и сохраняет в список
 
@@ -80,4 +80,4 @@ def create_sorted_file():
     for name, price in SP[-2:]:
         print(f"{name}: {price}")
 
-create_sorted_file()
+C_S_F()
